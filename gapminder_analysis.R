@@ -17,6 +17,7 @@ gapminder[is_long_lifeExp, 2007]
 gapminder$lifeExp 2007
 is_long_lifeExp <- gapminder$Africa
 gapminder[, c("Africa", "2007", "lifeExp")]
+Purpose of the file is a file that was ran onn gapminder data
 
 
 
