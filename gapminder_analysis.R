@@ -1,3 +1,4 @@
+library ("ggplot2")
 #notes from software carpentry worshop 1.18.17
 download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "gapminder-FiveYearData.csv")
 gapminder <- read.csv("gapminder-FiveYearData.csv")
@@ -27,5 +28,7 @@ o <- (africa_2007$lifeExp)
 africa_2007[o, ]
 
 
-
-ggplot(data=gapminder, aes(x = year, y = lifeExp, by = country, color = continent)) + geom_line geo_point()
+ggplot(data=gapminder, aes(x = year, y = lifeExp, by = country, color = continent)) + geom_point() +
+facet_grid(.~continent)
+#save plot
+ggsave(filename = "year_vs_lifeExp_percont_.png", width = 5, height =4, units = "in")
